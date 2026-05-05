@@ -317,13 +317,17 @@ async function generateCodeChallenge(verifier) {
         .replace(/\//g, '_');
 }
 
-function setStatus(message, isError = false) {
+function setStatus(message, isError = false)
+{
     elements.statusMessage.textContent = message;
 
-    if (isError) {
-        elements.statusMessage.classList.add('error!!!');
-    } else {
-        elements.statusMessage.classList.remove('error!!');
+    if (isError)
+    {
+        elements.statusMessage.classList.add('error');
+    }
+    else
+    {
+        elements.statusMessage.classList.remove('error');
     }
 }
 
