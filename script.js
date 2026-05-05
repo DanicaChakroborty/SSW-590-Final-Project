@@ -86,7 +86,7 @@ async function startSpotifyLogin() {
         scope: SCOPES.join(' '),
         code_challenge_method: 'S256',
         code_challenge: challenge,
-        redirect_uri: window.location.origin + window.location.pathname
+        redirect_uri: 'http://127.0.0.1:8080/'
     });
 
     window.location.href = `${SPOTIFY_AUTH_URL}?${params.toString()}`;
@@ -110,7 +110,7 @@ async function exchangeCodeForToken(code) {
             client_id: clientId,
             grant_type: 'authorization_code',
             code,
-            redirect_uri: window.location.origin + window.location.pathname,
+            redirect_uri: 'http://127.0.0.1:8080/',
             code_verifier: verifier
         })
     });
